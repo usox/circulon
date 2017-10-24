@@ -1,0 +1,31 @@
+{
+    "name": "usox/circulon",
+    "homepage": "https://github.com/usox/circulon",
+    "description": "Circulon is a simple library to resolve dependencies",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "php",
+        "references",
+        "dependencytree"
+    ],
+    "authors": [
+        {
+            "name": "Daniel Jakob",
+            "email": "github@usox.org",
+            "homepage": "https://usox.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "php": ">=5.5",
+        "phpunit/phpunit": "^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Usox\\Circulon\\": "src/Circulon"
+        }
+    }
+}
