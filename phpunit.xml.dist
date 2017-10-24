@@ -1,0 +1,10 @@
+<phpunit bootstrap="vendor/autoload.php">
+	<testsuites>
+		<testsuite name="Circulon">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+	<php>
+		<ini name="date.timezone" value="Europe/Berlin" />
+	</php>
+</phpunit>

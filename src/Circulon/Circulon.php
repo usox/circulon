@@ -66,7 +66,7 @@ final class Circulon implements CirculonInterface {
 	private function deepResolve($item) {
 		if (!array_key_exists($item, $this->dependency_map)) {
 			throw new Exception\DependencyItemNotFoundException(
-				sprintf('Item `%s` not found in dependency map ', $item)
+				sprintf('Item `%s` not found in dependency map', $item)
 			);
 		}
 
