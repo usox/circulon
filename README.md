@@ -1,5 +1,7 @@
 # Circulon - A PHP dependency resolver
 
+[![Build Status](https://travis-ci.org/usox/circulon.svg?branch=master)](https://travis-ci.org/usox/circulon)
+
 Requirements
 ============
 
