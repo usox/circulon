@@ -34,6 +34,8 @@ Calling `resolve()` will return the dependencies in order.
 ```php
 $list = $resolver->resolve();
 
+var_dump($list);
+
 array(4) {
   [0] =>
   string(3) "baz"
