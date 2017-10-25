@@ -1,13 +1,14 @@
 {
     "name": "usox/circulon",
     "homepage": "https://github.com/usox/circulon",
-    "description": "Circulon is a simple library to resolve dependencies",
+    "description": "A PHP dependency resolver",
     "license": "MIT",
     "type": "library",
     "keywords": [
         "php",
         "references",
-        "dependencytree"
+        "dependencytree",
+	"dependency"
     ],
     "authors": [
         {
