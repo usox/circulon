@@ -5,7 +5,7 @@
 Requirements
 ============
 
-To use Circulon in your projects, you will only require PHP 5.5 or later
+To use Circulon in your projects, you will just require PHP 5.6 or later.
 
 Composer install
 ================
@@ -25,10 +25,10 @@ Simply add your dependencies as follows:
 ```php
 $resolver = new \Usox\Circulon\Circulon();
 $resolver
-	->addDependency('foo', 'bar')
-	->addDependency('foobar', [])
-	->addDependency('baz', [])
-	->addDependency('bar', ['baz', 'foobar']);
+  ->addDependency('foo', 'bar')
+  ->addDependency('foobar', [])
+  ->addDependency('baz', [])
+  ->addDependency('bar', ['baz', 'foobar']);
 ```
 
 Calling `resolve()` will return the dependencies in order.
@@ -56,9 +56,9 @@ Circular dependencies
 ```php
 
 $resolver
-	->addDependency('foo', 'bar')
-	->addDependency('bar', 'baz')
-	->addDependency('baz', 'foo');
+  ->addDependency('foo', 'bar')
+  ->addDependency('bar', 'baz')
+  ->addDependency('baz', 'foo');
 
 $resolver->resolve();
 ```
