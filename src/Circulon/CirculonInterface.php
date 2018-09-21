@@ -1,21 +1,10 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace Usox\Circulon;
 
-/**
- * Interface: CirculonInterface
- */
 interface CirculonInterface {
 
-	/**
-	 * @param string $key
-	 * @param string|string[] $dependency
-	 *
-	 * @return $this
-	 */
-	public function addDependency($key, $dependency);
+	public function addDependency(string $key, array $dependency): Circuloninterface;
 
-	/**
-	 * @return string[]
-	 */
-	public function resolve();
+	public function resolve(): array;
 }

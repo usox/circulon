@@ -1,12 +1,7 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace Usox\Circulon;
 
-/**
- * Class: Circulon
- *
- * @see CirculonInterface
- * @final
- */
 final class Circulon implements CirculonInterface {
 
 	/**
@@ -24,32 +19,19 @@ final class Circulon implements CirculonInterface {
 	 */
 	private $resolved_dependencies = [];
 
-	/**
-	 * @param string $key
-	 * @param string|string[] $dependency
-	 *
-	 * @return $this
-	 */
-	public function addDependency($key, $dependency) {
+	public function addDependency(string $key, array $dependency): CirculonInterface {
 		if (array_key_exists((string) $key, $this->dependency_map)) {
 			throw new Exception\DependencyEntryImmutableException(
 				sprintf('Item `%s` already defined in dependency map', $key)
 			);
 		}
 
-		if (is_array($dependency)) {
-			$this->dependency_map[(string) $key] = $dependency;
-		} else {
-			$this->dependency_map[(string) $key] = [(string) $dependency];
-		}
+		$this->dependency_map[(string) $key] = $dependency;
 
 		return $this;
 	}
 
-	/**
-	 * @return string[]
-	 */
-	public function resolve() {
+	public function resolve(): array {
 		foreach (array_keys($this->dependency_map) as $item) {
 			$this->deepResolve($item);
 		}
@@ -58,12 +40,7 @@ final class Circulon implements CirculonInterface {
 	}
 
 
-	/**
-	 * Recursive dependency resolution
-	 *
-	 * @param string $item Item to resolve dependencies for
-	 */
-	private function deepResolve($item) {
+	private function deepResolve(string $item): void {
 		if (!array_key_exists($item, $this->dependency_map)) {
 			throw new Exception\DependencyItemNotFoundException(
 				sprintf('Item `%s` not found in dependency map', $item)
